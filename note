@@ -1,0 +1,12 @@
+Header {
+-logo
+-Search field and button
+}
+
+Body {
+  -Display 10 trash tiles on load.
+  -pagenation on load. 
+}
+Footer {
+  built by me??
+}
