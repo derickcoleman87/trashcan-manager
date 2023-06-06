@@ -1,24 +1,34 @@
-const fs = require("fs");
-const path = require("path");
-const csv = require("fast-csv");
+const data = [
+  { address: "10 Davis Rd. Bangor,Me 04401", trashCanId: 620336996 },
+  { address: "12 Davis Rd. Bangor,Me 04401", trashCanId: 620336993 },
+  { address: "55 Deer Isle Rd. Bangor,Me 04401", trashCanId: 620336991 },
+];
 
-const data = [];
-
-fs.createReadStream(path.resolve(__dirname, "trashcanData.csv"))
-  .pipe(csv.parse({ headers: true }))
-  .on("error", (error) => console.error(error))
-  .on("data", (row) => data.push(row))
-  .on("end", (rowCount) => console.log(data));
+console.log(data);
 
 let input = document.querySelector("input");
 
-function search() {
-  let searchResults = [];
+const searchButton = document.getElementById("search-btn");
+searchButton.addEventListener("click", search);
 
-  for (i = 0; i < data.length; i++) {
-    if (input.value === data.Address || input.value === data.trashCanId) {
-      searchResults.push(data[i]);
-      console.log(searchResults);
-    }
+function search() {
+  const newArr = [];
+  console.log("click");
+  console.log(input.value);
+  if (input.value.toLocaleLowerCase === data.address.toLocaleLowerCase) {
+    newArr.push(data.address);
+    console.log(newArr);
   }
 }
+
+// const fs = require("fs");
+// const path = require("path");
+// const csv = require("fast-csv");
+
+// const data = [];
+
+// fs.createReadStream(path.resolve(__dirname, "trashcanData.csv"))
+//   .pipe(csv.parse({ headers: true }))
+//   .on("error", (error) => console.error(error))
+//   .on("data", (row) => data.push(row))
+//   .on("end", (rowCount) => console.log(data));
