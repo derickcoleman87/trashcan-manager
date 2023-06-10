@@ -1,4 +1,13 @@
 {
+  "name": "trashcan-manager",
+  "version": "1.0.0",
+  "description": "A program to help manage trashcans for housing units",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Derick Coleman",
+  "license": "ISC",
   "dependencies": {
     "fast-csv": "^4.3.6"
   }
