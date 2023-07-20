@@ -1,4 +1,6 @@
 - - clear the results when user researches.
+- - add indexOf for easier searching
+- - add key press for search button.
 - - make Delete button work
 - - make Add button work
 - - Add backend/database 
