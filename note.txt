@@ -1,0 +1,4 @@
+- - clear the results when user researches.
+- - make Delete button work
+- - make Add button work
+- - Add backend/database 
