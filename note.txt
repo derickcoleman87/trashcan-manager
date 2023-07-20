@@ -3,4 +3,5 @@
 - - add key press for search button.
 - - make Delete button work
 - - make Add button work
-- - Add backend/database 
+- - add backend/database 
+- - make trashCanId a number and adjust search function to search for a number? or is it better to search by a string where input field is a string.

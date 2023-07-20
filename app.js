@@ -15,7 +15,7 @@ const data = [
 //   .on("data", (row) => data.push(row))
 //   .on("end", (rowCount) => console.log(data));
 
-let input = document.querySelector("input");
+const input = document.querySelector("input");
 
 const searchButton = document.getElementById("search-btn");
 searchButton.addEventListener("click", search);
