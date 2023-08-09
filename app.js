@@ -23,13 +23,22 @@ searchButton.addEventListener("click", search);
 function search() {
   let newArr = [];
 
-  console.log("click");
-  console.log(typeof input.value);
+  // let address = data.address;
+  // Why address undefined?????
 
   for (let i = 0; i < data.length; i++) {
-    if (input.value === data[i].trashCanId || input.value === data[i].address) {
-      newArr.push(data[i]);
-      console.log(newArr);
+    const address = data[i].address.toUpperCase();
+    const searchInput = input.value.toUpperCase();
+    console.log(address);
+
+    if (address.indexOf(searchInput) > -1) {
+      if (
+        input.value === data[i].trashCanId ||
+        input.value === data[i].address
+      ) {
+        newArr.push(data[i]);
+        console.log(newArr);
+      }
     }
   }
 
@@ -37,6 +46,7 @@ function search() {
     let results = document.createElement("div");
     results.classList.add("results");
 
+    // should it be a ul instead??
     results.innerHTML = `
       <h3>Address: ${newArr[i].address}</h3> 
       <h3>Trashcan ID #: ${newArr[i].trashCanId}</h3> <button>Delete</button>
