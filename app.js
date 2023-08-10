@@ -32,10 +32,7 @@ function search() {
     console.log(address);
 
     if (address.indexOf(searchInput) > -1) {
-      if (
-        input.value === data[i].trashCanId ||
-        input.value === data[i].address
-      ) {
+      if (searchInput === data[i].trashCanId || searchInput === address) {
         newArr.push(data[i]);
         console.log(newArr);
       }
