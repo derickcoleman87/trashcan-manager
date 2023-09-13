@@ -9,7 +9,14 @@ img {
 }
 
 .title-container {
-  display: inline-block;
+  display: flex;
+  /* border: 1px solid red; */
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-left: 300px;
+  padding-top: 20px;
 }
 
 /* .results-container {
@@ -25,6 +32,7 @@ h1 {
 .search-container {
   display: flex;
   justify-content: center;
+  /* border: 1px solid black; */
 }
 
 input {
