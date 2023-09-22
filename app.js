@@ -17,8 +17,14 @@ const data = [
 
 const input = document.querySelector("input");
 
-const searchButton = document.getElementById("search-btn");
-searchButton.addEventListener("click", search);
+const searchButton = document.querySelector("#search-btn");
+console.log(searchButton);
+// searchButton.addEventListener("click", search);
+
+// keyup event not working.
+searchButton.addEventListener("keyup", (event) => {
+  if (event.key == "Enter") search();
+});
 
 function search() {
   let newArr = [];
@@ -29,13 +35,11 @@ function search() {
     // console.log(address);
 
     if (address.indexOf(searchInput) > -1) {
-      console.log("works");
-      console.log(data[i].address);
-      // code doesn't work form here down.
-      if (searchInput === data[i].trashCanId || searchInput === address) {
-        newArr.push(data[i]);
-        console.log(newArr);
-      }
+      newArr.push(data[i]);
+    }
+
+    if (searchInput === data[i].trashCanId || searchInput === address) {
+      newArr.push(data[i]);
     }
   }
 
@@ -48,7 +52,7 @@ function search() {
       <h3>Trashcan ID #: ${newArr[i].trashCanId}</h3> <button>Delete</button>
       <button>Add</button>
     `;
-    console.log(results);
+    // console.log(results);
 
     document.querySelector(".results-container").append(results);
   }
