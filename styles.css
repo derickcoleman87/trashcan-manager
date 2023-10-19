@@ -46,12 +46,32 @@ input {
 button {
   border-radius: 5px;
   border: none;
-  padding: 2px 6px;
+  padding: 4px 8px;
   background-color: #336699;
   color: #ff6600;
   cursor: pointer;
 }
 
 .results {
+  font-size: large;
+  margin: 20px;
+  padding: 15px;
   border: 1px solid black;
+  border-radius: 10px;
+}
+
+#address {
+  margin-bottom: 10px;
+}
+
+#delete,
+#trashcanId {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

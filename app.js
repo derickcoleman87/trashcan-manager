@@ -18,12 +18,14 @@ const data = [
 const input = document.querySelector("input");
 
 const searchButton = document.querySelector("#search-btn");
-console.log(searchButton);
-// searchButton.addEventListener("click", search);
 
-// keyup event not working.
-searchButton.addEventListener("keyup", (event) => {
-  if (event.key == "Enter") search();
+searchButton.addEventListener("click", search);
+
+input.addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
+    console.log("Enter");
+    search();
+  }
 });
 
 function search() {
@@ -32,7 +34,6 @@ function search() {
   for (let i = 0; i < data.length; i++) {
     const address = data[i].address.toUpperCase();
     const searchInput = input.value.toUpperCase();
-    // console.log(address);
 
     if (address.indexOf(searchInput) > -1) {
       newArr.push(data[i]);
@@ -48,11 +49,10 @@ function search() {
     results.classList.add("results");
 
     results.innerHTML = `
-      <h3>Address: ${newArr[i].address}</h3> 
-      <h3>Trashcan ID #: ${newArr[i].trashCanId}</h3> <button>Delete</button>
-      <button>Add</button>
+      <h3 id="address">Address: ${newArr[i].address}</h3> 
+      <h3 id="trashcanId">Trashcan ID #: ${newArr[i].trashCanId}</h3> <button id="delete" >Delete</button>
+      <button id="add">Add</button>
     `;
-    // console.log(results);
 
     document.querySelector(".results-container").append(results);
   }
